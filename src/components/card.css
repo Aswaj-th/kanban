@@ -1,0 +1,44 @@
+.card {
+    background: white;
+    box-shadow: 5px 5px 10px #808080;
+    padding: 20px;
+    border-radius: 10px;
+    color: black;
+    font-size: 18px;
+}
+
+.id {
+    color: #808080;
+    font-size: 18px;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+}
+
+img {
+    padding: 5px;
+}
+
+.tags {
+    display: flex;
+}
+
+.prioritylogo {
+    display: flex;
+    border: 1px solid #dddddd;
+    margin-right: 5px;
+}
+
+.tag {
+    color: #808080;
+    border: 1px solid #dddddd;
+    margin-right: 5px;
+}
