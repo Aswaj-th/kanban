@@ -1,0 +1,33 @@
+.col {
+    font-size: 12px;
+    width: 20%;
+}
+
+.col-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.head-left {
+    display: flex;
+    align-items: center;
+}
+
+.head-head {
+    padding: 0 4px;
+    color: black;
+    font-weight: 500;
+}
+
+.length {
+    color: #808080;
+}
+
+.head-right {
+    display: flex;
+}
+
+.imgs {
+    padding: 5px;
+}

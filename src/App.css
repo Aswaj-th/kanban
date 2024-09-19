@@ -1,11 +1,51 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background: #F4F5F9;
 }
 
 .app {
-  background: #F4F5F9;
+  /* display: flex; */
+  width: 100%;
+  padding: 10px;
+}
+
+.display {
+  background: white;
+  padding: 20px;
+  /* height: 30px; */
+  /* overflow: hidden; */
+}
+
+.show {
+  text-align: left;
+  box-shadow: 0px 0px 10px #808080;
   display: flex;
+  width: fit-content;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.selectionBox {
+  background: #F7F8FA;
+  position: absolute;
+  padding: 10px;
+  width: 200px;
+  z-index: 5;
+  box-shadow: 0px 0px 5px #808080;
+  border-radius: 5px;
+}
+
+.grouping, .ordering {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cols {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
