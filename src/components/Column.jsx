@@ -22,8 +22,8 @@ const Column = ({content, head, icon, grouping, draggedItem, draggedOverItem, ha
             </div>
             <div className="col-content">
                 {/* {JSON.stringify(content)} */}
-                {content.map((el) => {
-                    return (<Card draggedItem={draggedItem} handleDrag={handleDrag} ticket={el} key={el.id} grouping={grouping} />)
+                {content && content.map((el) => {
+                    return (<Card draggedItem={draggedItem} handleDrag={handleDrag} ticket={el} key={el.id || 1} grouping={grouping} />)
                 })}
             </div>
         </div>

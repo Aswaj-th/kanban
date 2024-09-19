@@ -29,7 +29,7 @@ const Card = ({ticket, grouping, draggedItem, handleDrag}) => {
 
     return (
         <>
-        <div className='card' draggable={grouping === 1} onDragStart={() => draggedItem.current = {id: ticket.id, status: ticket.status}} onDragEnd={handleDrag}>
+        <div className='card' draggable={grouping === 1} onDragStart={() => draggedItem.current = {item: ticket, id: ticket.id, status: ticket.status}} onDragEnd={handleDrag}>
             <div className="head">
                 <div className="id">
                     {ticket.id}
@@ -54,7 +54,7 @@ const Card = ({ticket, grouping, draggedItem, handleDrag}) => {
                         <img src={prioritylogo} alt="" />
                     </div>
                 }
-                {ticket.tag.map(el => <div className="tag" key={el}>{el}</div>)}
+                {ticket.tag && ticket.tag.map(el => <div className="tag" key={el}>{el}</div>)}
             </div>
         </div>
         </>

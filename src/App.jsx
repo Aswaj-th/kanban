@@ -29,7 +29,7 @@ function App() {
 	const [ordering, setOrdering] = useState(getOrdering);
 	const [groups, setGroups] = useState(null);
 	const [showOptions, setShowOptions] = useState(false);
-	let headings = [['Todo', 'In Progress', 'Backlog', 'Cancelled', 'Done'], ['usr-1', 'usr-2', 'usr-3', 'usr-4', 'usr-5'], ['Urgent', 'High Priority', 'Medium Priority', 'Low priority', 'No priorirty']];
+	let headings = [['Todo', 'In progress', 'Backlog', 'Cancelled', 'Done'], ['usr-1', 'usr-2', 'usr-3', 'usr-4', 'usr-5'], ['Urgent', 'High Priority', 'Medium Priority', 'Low priority', 'No priorirty']];
 	let icons = [[todo, inProgress, Backlog, cancelled, done], [], [urgPriorityOr, highPriority, medPriority, lowPriority, noPriority]]
 	let temp;
 
@@ -103,7 +103,7 @@ function App() {
 					return el.priority === 0;
 				}))
 			}
-			console.log(temp);
+			// console.log(temp);
 			setGroups(temp);
 		})
 		.catch(err => console.log(err))
@@ -182,18 +182,26 @@ function App() {
 				temp2.push(temp3);
 			}
 		}
-		console.log(temp2);
+		// console.log(temp2);
 		setGroups(temp2);
 	}, [grouping, ordering])
 
 	const handleDrag = () => {
 		if(draggedItem.current.status === draggedOverItem.current.status) return;
 		temp = [...groups];
+		// console.log(temp);
 		let item;
+		// console.log(draggedItem.current)
+		// console.log(draggedOverItem.current)
 		for(let i = 0; i < 5; i++) {
+			// console.log(headings[0][i])
+			// console.log(draggedItem.current.status)
 			if(draggedItem.current.status === headings[0][i]) {
+				// console.log('uyup')
 				for(let j = 0; j < temp[i].length; j++) {
+					// console.log(temp[i][j].id);
 					if(draggedItem.current.id === temp[i][j].id) {
+						// console.log("eya")
 						item = {...temp[i][j]};
 					}
 				}
@@ -202,11 +210,13 @@ function App() {
 				})
 			}
 		}
+		// console.log(item);
 		for(let i = 0; i < 5; i++) {
 			if(draggedOverItem.current.status === headings[0][i]) {
 				temp[i].push({...item, status: draggedOverItem.current.status});
 			}
 		}
+		// console.log(temp);
 		setGroups(temp);
 	}
 
